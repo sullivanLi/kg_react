@@ -3,13 +3,18 @@ import React from "react";
 export default class Value extends React.Component {
   render() {
     return (
-      <div class="container-fluid bg-grey">
-        <footer class="container-fluid text-center">
-          <a href="#kg" title="To Top">
-            <span class="glyphicon glyphicon-chevron-up"></span>
-          </a>
-        </footer>
-      </div>
+      <footer class="text-center">
+        <div class="footer">
+          <div class="container">
+            <div class="row">
+              <div class="col-xs-12">
+                <img src="img/logo-w1.png" alt="Logo" class="footer-logo" />
+                Kerry Grain © 2016
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
     );
   }
 
