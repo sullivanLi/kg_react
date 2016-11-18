@@ -256,15 +256,27 @@ footer .footer-logo {
   top: 30%;
   padding: 1%;
   z-index: 999;
-  min-width: 380px;
   background-color:rgba(0, 0, 0, 0.31);
 }
 .job-list {
   font-family: Montserrat, sans-serif;
 }
-.job-title {
+.job-list .job-title {
   color: #595959;
   font-size: 18px;
+}
+.job {
+  font-family: Montserrat, sans-serif;
+  color: #595959;
+}
+.job .job-title {
+  text-align: center;
+  font-size: 20px;
+  color: black;
+}
+.job-detail .title {
+  font-size: 18px;
+  color: black;
 }
 .job-item:hover {
   cursor: pointer;
@@ -276,6 +288,27 @@ footer .footer-logo {
 .job-badge {
   padding-right: 10px;
   padding-left: 5px;
+}
+.image-with-text {
+  position:relative;
+  background-color: #666;
+}
+.image-with-text img{
+  width: 100%;
+  height: auto;
+  margin: 70px 0 0 0;
+  opacity: 0.3;
+}
+.image-with-text .text {
+  left: 0;
+  position:absolute;
+  text-align:center;
+  top: 40%;
+  width: 100%;
+  font-size: 60px;
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
 }
 @keyframes slide {
   0% {
@@ -324,7 +357,8 @@ footer .footer-logo {
     margin-bottom: 35px;
   }
   .banner_Over_Box {
-    width: 75%;
+    left: 0%;
+    width: 100%;
   }
   .brand {
     height: 125px;
@@ -339,7 +373,7 @@ footer .footer-logo {
     height: 30px;
   }
   h4 {
-    font-size: 16px;
+    font-size: 15px;
   }
   .carousel-inner {
     width: 250%;
@@ -350,6 +384,9 @@ footer .footer-logo {
     min-height: 30px;
     line-height: 30px;
   }
+  .image-with-text img{
+    margin: 40px 0 0 0;
+  }
 }
 @media screen and (max-width: 480px) {
   .logo {
@@ -358,6 +395,10 @@ footer .footer-logo {
   .carousel-inner {
     width: 300%;
     left: -100%;
+  }
+  .image-with-text .text {
+    top: 50%;
+    font-size: 20px;
   }
 }
 #googleMap {

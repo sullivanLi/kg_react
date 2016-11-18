@@ -15,6 +15,10 @@ class JobStore extends EventEmitter {
   fetch() {
     return this.jobs;
   }
+  fetchById(id) {
+    let jobPos = this.jobs.map(function(x) {return x.id; }).indexOf(parseInt(id));
+    return this.jobs[jobPos];
+  }
 }
 
 const jobStore = new JobStore;

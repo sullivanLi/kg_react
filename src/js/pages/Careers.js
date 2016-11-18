@@ -4,15 +4,8 @@ import JobStore from "../stores/JobStore";
 import Job from "../components/careers/Job";
 
 export default class Careers extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      jobs: JobStore.fetch(),
-    }
-  }
-
   render() {
-    const { jobs } = this.state;
+    const jobs = JobStore.fetch();
     let title;
 
     if ( jobs.length !== 0 ) {
@@ -26,22 +19,22 @@ export default class Careers extends React.Component {
     });
 
     return (
-      <div>
-        <div id="careers" class="container-fluid white-font">
-          <div class="gap-200"></div>
-          <h1 class="white-font text-center">{title}</h1>
-          <div class="gap-200"></div>
+      <div id="careers">
+        <div class="image-with-text">
+          <img src="img/career-bg.jpg"/>
+          <div class="text">
+            {title}
+          </div>
         </div>
         <div class="container-fluid bg-grey">
           <div class="row">
-            <div class="col-lg-4 center-block">
-              <img src="img/career.jpg" class="img-responsive" />
-              <br/>
-            </div>
-            <div class="col-lg-6 col-lg-offset-1">
+            <div class="col-lg-8 col-lg-offset-2">
               <ul class="list-group job-list">
                 {JobComponents}
               </ul>
+            </div>
+            <div class="col-xs-12 hidden-lg">
+              <div class="gap-200"></div>
             </div>
           </div>
         </div>
