@@ -5,8 +5,6 @@ import Value from "../components/landing/Value";
 import Gallery from "../components/landing/Gallery";
 import Services from "../components/landing/Services";
 import Products from "../components/landing/Products";
-import Contact from "../components/landing/Contact";
-import Googlemap from "../components/landing/Googlemap";
 
 export default class Landing extends React.Component {
   render() {
@@ -17,8 +15,6 @@ export default class Landing extends React.Component {
         <Gallery />
         <Services />
         <Products />
-        <Contact />
-        <Googlemap />
       </div>
     ); 
   }

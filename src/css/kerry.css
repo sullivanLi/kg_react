@@ -151,8 +151,7 @@ h4 {
   font-style: normal;
 }
 .panel {
-  border: 1px solid #f4511e;
-  border-radius: 0 !important;
+  border-radius: 0;
   transition: box-shadow 0.5s;
 }
 .panel:hover {
@@ -160,12 +159,12 @@ h4 {
 }
 .panel-footer .btn:hover {
   border: 1px solid #f4511e;
-  background-color: #fff !important;
+  background-color: #fff;
   color: #f4511e;
 }
 .panel-heading {
-  color: #fff !important;
-  background-color: #f4511e !important;
+  color: #fff;
+  background-color: #f4511e;
   padding: 25px;
   border-bottom: 1px solid transparent;
   border-top-left-radius: 0px;
@@ -174,7 +173,7 @@ h4 {
   border-bottom-right-radius: 0px;
 }
 .panel-footer {
-  background-color: white !important;
+  background-color: white;
 }
 .panel-footer h3 {
   font-size: 32px;
@@ -187,6 +186,20 @@ h4 {
   margin: 15px 0;
   background-color: #f4511e;
   color: #fff;
+}
+.panel.panel-contact {
+  border: solid 3px #0099cc;
+  font-family: Montserrat, sans-serif;
+}
+.panel.panel-contact .panel-heading {
+  background-color: #0099cc;
+  text-align: center;
+  font-size: 25px;
+}
+.panel.panel-contact .glyphicon {
+  color: #0099cc;
+  font-size: 20px;
+  margin-right: 20px;
 }
 .navbar {
   margin-bottom: 0;
@@ -310,6 +323,19 @@ footer .footer-logo {
   font-weight: 600;
   text-transform: uppercase;
 }
+.image-with-text .map {
+  font-family: Montserrat, sans-serif;
+}
+.image-with-text .map span {
+  margin: 2px;
+}
+.image-with-text .map.vancouver {
+  position:absolute;
+  left: 25%;
+  top: 33%;
+  color: white;
+  font-size: 18px;
+}
 @keyframes slide {
   0% {
     opacity: 0;
@@ -399,6 +425,17 @@ footer .footer-logo {
   .image-with-text .text {
     top: 50%;
     font-size: 20px;
+  }
+  .panel.panel-contact .panel-heading {
+    font-size: 18px;
+  }
+  .panel.panel-contact .glyphicon {
+    font-size: 15px;
+    margin-right: 10px;
+  }
+  .image-with-text .map.vancouver {
+    font-size: 10px;
+    top: 38%;
   }
 }
 #googleMap {
