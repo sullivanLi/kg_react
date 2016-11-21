@@ -5,8 +5,9 @@ class JobStore extends EventEmitter {
   constructor() {
     super();
     let _this = this;
-    axios.get('http://localhost:3000/api/jobs').then( function(response) {
+    axios.get('http://kerrygrain.ca:9292/api/jobs').then( function(response) {
       _this.jobs = response.data;
+      _this.emit("completed");
     }).catch( function(error) {
         console.log(error);
     });

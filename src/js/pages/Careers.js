@@ -4,15 +4,25 @@ import JobStore from "../stores/JobStore";
 import Job from "../components/careers/Job";
 
 export default class Careers extends React.Component {
-  render() {
-    const jobs = JobStore.fetch();
-    let title;
+  constructor() {
+    super();
+    let jobs = JobStore.fetch() || [];
+    this.state = {
+      jobs: jobs,
+      title: this.getTitle(jobs.length),
+    };
+  }
 
-    if ( jobs.length !== 0 ) {
-      title = "We are hiring";
+  getTitle(length) {
+    if ( length > 0 ) {
+      return "We are hiring";
     } else {
-      title = "None of Jobs is Opened"
+      return "None of Jobs is Opened"
     }
+  }
+
+  render() {
+    const { jobs, title } = this.state;
 
     const JobComponents = jobs.map((job) => {
       return <Job key={job.id} {...job}/>;
@@ -23,7 +33,7 @@ export default class Careers extends React.Component {
         <div class="image-with-text">
           <img src="img/career-bg.jpg"/>
           <div class="text">
-            {title}
+            {this.state.title}
           </div>
         </div>
         <div class="container-fluid bg-grey">
@@ -33,13 +43,22 @@ export default class Careers extends React.Component {
                 {JobComponents}
               </ul>
             </div>
-            <div class="col-xs-12 hidden-lg">
-              <div class="gap-200"></div>
-            </div>
+            <div class="gap-450"></div>
           </div>
         </div>
       </div>
     );
+  }
+
+  componentWillMount() {
+    JobStore.on("completed", () => {
+      let jobs = JobStore.fetch();
+      let title = this.getTitle(jobs.length);
+      this.setState({
+        jobs: jobs,
+        title: title,
+      });
+    });
   }
 
   componentDidMount() {
